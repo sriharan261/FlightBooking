@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content%}
+<form method="POST" action="/home">
+<table>
+{{form.hidden_tag()}}
+<tr>
+<td>{{ form.dep.label}}</td>
+<td>{{form.arv.label}}</td>
+<td>{{form.depDate.label}}</td>
+<td>{{form.adult.label}}</td>
+<td>{{form.child.label}}</td></tr>
+<tr>
+<td>{{form.dep}}</td>
+<td>{{form.arv}}</td>
+<td>{{form.depDate}}</td>
+<td>{{form.adult}}</td>
+<td>{{form.child}}</td>
+</tr>        
+</table>
+<spam style="position: relative;">{{form.submit (class="btn")}}</spam>
+</form>
+{% endblock content%}
+

@@ -1,0 +1,52 @@
+{% extends "admintemp.html" %}
+
+{%block content%}
+
+<form method="post" action="/search" >
+
+{{form.hidden_tag()}}
+{{form.name.label}}
+{{form.name}}
+{{form.form.label}}
+{{form.form}}
+{{form.to.label}}
+{{form.to}}
+{{form.date.label}}
+{{form.date}}
+{{form.time.label}}
+{{form.time}}
+{{form.sumbit (class="btn")}}
+</form>
+
+
+
+{% if flights %}
+<form>
+     
+    <table>
+        <thead>
+        <tr>
+            <td>From</td>
+            <td>To</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>price</td>
+            <td>Capacity</td>
+        </tr>
+        </thead>
+        <tbody>
+          {%for fl in flights%}
+          <tr>
+                <td>{{fl.form}}</td>
+                <td>{{fl.to}}</td>
+                <td>{{fl.date}}</td>
+                <td>{{fl.time}}</td>
+                <td>{{fl.cost}}</td>
+                <td>{{fl.seat}}</td>
+          </tr> 
+          {% endfor %}   
+        </tbody>
+    </table>
+</form>
+{% endif %}
+{%endblock content%}

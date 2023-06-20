@@ -1,0 +1,15 @@
+{% extends "admintemp.html" %}
+
+ {%block content%}
+<div>
+<button><a href="{{ url_for('add') }}" (class="btn")> Add Flight </a></button>
+</div>
+<div>
+<button><a href="{{ url_for('delete') }}" (class="btn") > Delete Flight </a></button>
+</div>
+<div>
+<button>
+<a href="{{ url_for('search') }}" (class="btn")> Serach Flight </a> 
+</button>
+</div>
+{% endblock content %}

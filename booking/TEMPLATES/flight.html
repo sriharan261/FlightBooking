@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content%}
+
+
+
+     
+      <table>
+          <thead>
+          <tr>
+            <td>From</td>
+            <td>To</td>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Price</td>
+            <td> book it!</td>
+          </tr>
+          </thead>
+          <tbody>
+            {%for fl in flights%}
+            <tr>
+                  
+                  <td>{{fl.form}}</td>
+                  <td>{{fl.to}}</td>
+                  <td>{{fl.date}}</td>
+                  <td>{{fl.time}}</td>
+                  <td>{{fl.cost}}</td>
+                  <td><button><a href="/book/{{fl.id}}&{{c}}">book</a></button></td>
+
+            </tr>       
+            {%endfor%}        
+            </tbody>
+      </table>
+
+
+
+
+
+{% for flight in flights %}
+   {{flight}}  
+{% endfor %}
+
+{{flights}}
+{% endblock content%}
